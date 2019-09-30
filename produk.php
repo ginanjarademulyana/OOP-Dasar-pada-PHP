@@ -6,6 +6,10 @@ class Produk {
             $penerbit = "penerbit",
             $harga = 0;
 
+    public function getLabel(){
+        return "$this->penulis, $this->penerbit";
+    }
+
 }
 
 // $produk1 = new Produk();
@@ -24,3 +28,5 @@ $produk3->penerbit = "Dorion";
 $produk3->harga = 30000;
 
 echo "Komik : $produk3->penulis, $produk3->penerbit";
+echo "<br>";
+echo "Komik : ", $produk3->getLabel();
