@@ -13,9 +13,9 @@ class Produk {
                 $this->judul = $judul;
                 $this->penulis = $penulis;
                 $this->penerbit = $penerbit;
-                $this->harga = $harga,
-                $this->jmlHalaman = $jmlHalaman,
-                $this->waktuMain = $waktuMain,
+                $this->harga = $harga;
+                $this->jmlHalaman = $jmlHalaman;
+                $this->waktuMain = $waktuMain;
                 $this->tipe = $tipe;
             }
 
@@ -28,8 +28,10 @@ class Produk {
 
         if( $this->tipe == "Komik"){
             $str .= " - {$this->jmlHalaman} Halaman.";
+            return $str;
         }else if ($this->tipe == "Game"){
             $str .= " ~ {$this->waktuMain} Jam.";
+            return $str;
         }
     }
 
@@ -44,6 +46,10 @@ class CetakInfoProduk {
 
 $produk1 = new Produk("Naruto","Mashasi Koshimoto", "Shonen Jump", 30000, 100, null, "Komik");
 $produk2 = new Produk("Uncharted","Neil Druckman", "Sony Computer", 25000, null, 50, "Game");
+
+echo $produk1->getInfoLengkap();
+echo "<br>";
+echo $produk2->getInfoLengkap();
 
 // Komik : Mashasi Koshimoto, Shonen Jump
 // Game : Neil Druckman, Sony Computer
