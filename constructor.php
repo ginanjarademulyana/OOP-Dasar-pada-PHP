@@ -1,10 +1,17 @@
 <?php 
 
 class Produk {
-    public  $judul = "judul",
-            $penulis = "penulis",
-            $penerbit = "penerbit",
-            $harga = 0;
+    public  $judul,
+            $penulis,
+            $penerbit,
+            $harga;
+
+            public function __construct($judul = "Judul", $penulis = "Penulis", $penerbit = "Penerbit", $harga = 0){
+                $this->judul = $judul;
+                $this->penulis = $penulis;
+                $this->penerbit = $penerbit;
+                $this->harga = $harga;
+            }
 
     public function getLabel(){
         return "$this->penulis, $this->penerbit";
@@ -12,27 +19,12 @@ class Produk {
 
 }
 
-// $produk1 = new Produk();
-// $produk1->judul = "Naruto";
-// var_dump($produk1);
+$produk1 = new Produk("Naruto","Masashi Koshimoto", "Shonen", 30000);
+$produk2 = new Produk("Uncharted","Neil Druckman", "Sony Computer", 25000);
+$produk3 = new Produk("Dragon Ball");
 
-// $produk2 = new Produk();
-// $produk2->judul = "Uncharted";
-// $produk2->tambahProperty = "Hahahahah";
-// var_dump($produk2);
-
-$produk3 = new Produk();
-$produk3->judul = "Naruto";
-$produk3->penulis = "Masashi Kishimoto";
-$produk3->penerbit = "Dorion";
-$produk3->harga = 30000;
-
-$produk4 = new Produk();
-$produk4->judul = "Uncharted";
-$produk4->penerbit = "Neil Druckmann";
-$produk4->penulis = "Sony Computer";
-$produk4->harga = 25000000;
-
-echo "Komik : " . $produk3->getLabel();
+echo "Komik : " . $produk1->getLabel();
 echo "<br>";
-echo "Game : " . $produk4->getLabel();
+echo "Game : " . $produk2->getLabel();
+echo "<br>";
+var_dump($produk3);
